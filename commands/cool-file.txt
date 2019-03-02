@@ -1,0 +1,8 @@
+ unirest.get(`https://random.dog/woof.json`)
+.end(function (result) {
+const embed = new Discord.RichEmbed()
+.setTitle('DOG')
+.setImage(`${result.body.url}`)
+.setFooter('Powered By random.dog)
+message.channel.send(embed)
+});
