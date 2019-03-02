@@ -1,0 +1,12 @@
+module.exports = {
+ name: 'name',
+  allow: 'all',
+guildOnly: false,
+    description: 'description',
+    usage: `<optional> [required]`,
+    catagory: ``,//admin fun misc code
+    hidden: false,
+    execute(message, args, client, Discord){
+
+},
+};
