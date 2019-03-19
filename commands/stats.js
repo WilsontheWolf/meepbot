@@ -6,6 +6,7 @@ guildOnly: false,
       usage: ``,
   catagory: `misc`,//admin fun misc code
   hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord, Music, stats){
       message.channel.startTyping()
       const startUsage = process.cpuUsage();

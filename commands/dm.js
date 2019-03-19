@@ -6,6 +6,7 @@ guildOnly: false,
       usage: `[userid]`,
   catagory: `code`,//admin fun misc code
   hidden: true,
+  aliases: [''],
     execute(message, args, client, Discord, config, ){
       let dmlog = config.dmlog
       let oldUser = client.users.get(client.channels.get(dmlog).topic)

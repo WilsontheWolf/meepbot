@@ -14,6 +14,8 @@ const unirest = require('unirest');
 const hex64 = require('hex64')
 // ihack2712: edit, added a http server.
 const Express = require('express');
+const SQLite = require("better-sqlite3");
+const users = new SQLite('./database/users.sqlite');
 const App  = Express()
 const welcomeHook = new Discord.WebhookClient(process.env.WELCOMEID, process.env.WELCOMETO);
 const logHook = new Discord.WebhookClient(process.env.LOGID, process.env.LOGTO);
@@ -36,13 +38,28 @@ client.reload = async () => {
   console.log('reloading commands...')
 client.commands = client.commands.deleteAll()
 client.commands = new Discord.Collection();
-
+//////////////////////This reload function is broken///////////////////////////
+client.aliases = client.commands.deleteAll()
+client.aliases = new Discord.Collection();
+  
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
   console.log('reloading sucsessful(?)')
-}}
+}
+
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+  command.aliases.forEach(ali => {
+    client.aliases.set(ali, command);
+    console.log('reloading sucsessful(?)')
+  })
+}
+
+}
+
+client.aliases = new Discord.Collection();  
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -50,6 +67,15 @@ for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
+
+client.aliases = new Discord.Collection();
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+  if(command.aliases[0]) {command.aliases.forEach(ali => {
+    client.aliases.set(ali, command);
+  })}
+}
+
 client.Rnd = function Rnd(min, max) {
 return Math.floor((Math.random()*(max-min))+min)
 }
@@ -320,12 +346,12 @@ ${error}
   //makes 'em small letters
   var commandName = args.shift().toLowerCase();
   //checks if command is valid
-  if (!client.commands.has(commandName)) return;
+  if (!client.commands.has(commandName) && !client.aliases.has(commandName)) return;
   let isOwner 
   if(message.author.id == config.ownerId || message.author.id == config.chicken) {isOwner = true}
   else {isOwner = false}
   try {
-    var command = client.commands.get(commandName)
+    var command = client.commands.get(commandName) || client.aliases.get(commandName)
     
     if(command.guildOnly && message.channel.type === 'dm') return message.channel.send('This command is server only, please run this command on server.');
     
@@ -385,6 +411,21 @@ const bembed = new Discord.RichEmbed().addField('<a:WeeWoo:525000522932027393>**
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 client.user.setActivity(`With ${client.users.size} Friends`)
+  
+    // Check if the table "points" exists.
+  const table = users.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'users';").get();
+  if (!table['count(*)']) {
+    // If the table isn't there, create it and setup the database correctly.
+    users.prepare("CREATE TABLE users (id TEXT PRIMARY KEY, description TEXT);").run();
+    // Ensure that the "id" row is always unique and indexed.
+    users.prepare("CREATE UNIQUE INDEX idx_users_id ON id (id);").run();
+    users.pragma("synchronous = 1");
+    users.pragma("journal_mode = wal");
+  }
+ 
+  // And then we have two prepared statements to get and set the score data.
+  client.getProfile = users.prepare("SELECT * FROM users WHERE id = ?");
+  client.setProfile = users.prepare("INSERT OR REPLACE INTO users (id, description) VALUES (@id, @description);");
 });
 
 

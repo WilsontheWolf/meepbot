@@ -9,6 +9,7 @@ guildOnly: false,
     usage: ``,
   catagory: `fun`,//admin fun misc code
   hidden: true,
+  aliases: [''],
     execute(message, args, client, Discord){
       
 //0⃣ 1⃣ 2⃣ 3⃣ 4⃣ 5⃣ 6⃣ 7⃣ 8⃣ 💣

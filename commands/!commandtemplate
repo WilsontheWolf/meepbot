@@ -6,6 +6,7 @@ guildOnly: false,
     usage: `<optional> [required]`,
     catagory: ``,//admin fun misc code
     hidden: false,
+    aliases: [''],
     execute(message, args, client, Discord){
 
 },

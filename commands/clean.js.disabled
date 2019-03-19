@@ -6,6 +6,7 @@ guildOnly: true,
     usage: ``,
     catagory: `code`,//admin fun misc code
     hidden: false,
+    aliases: [''],
     execute(message, args, client, Discord, config){
 let messagesDeleted
     message.channel.fetchMessages({ limit: 100 }).then(messages => {

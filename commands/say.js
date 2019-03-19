@@ -6,6 +6,7 @@ module.exports = {
     usage: `[message]`,
   catagory: `misc`,//admin fun misc code
   hidden: false,
+  aliases: [''],
  execute(message, args, client, Discord) {
    
    function clean(text) {

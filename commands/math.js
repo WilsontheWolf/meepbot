@@ -6,6 +6,7 @@ guildOnly: false,
     usage: ``,
     catagory: `fun`,//admin fun misc code
   hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord){
       let q1 = client.Rnd(1, 12)
       let q2 = client.Rnd(1, 12)

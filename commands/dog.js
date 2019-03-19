@@ -6,6 +6,7 @@ guildOnly: false,
     usage: ``,
   catagory: `code`,//admin fun misc code
   hidden: true,
+  aliases: [''],
     execute(message, args, client, Discord){
 const unirest = require('unirest')
       unirest.get(`https://random.dog/woof.json`)
