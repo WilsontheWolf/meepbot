@@ -6,6 +6,7 @@ guildOnly: true,
       usage: `[message link]`,
   catagory: `code`,//admin fun misc code
   hidden: false,
+  aliases: [''],
  execute(message, args, client, Discord) {
    var arg = args[0].slice(32).split('/');
    var smessage = message

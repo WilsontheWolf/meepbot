@@ -6,6 +6,7 @@ module.exports = {
   catagory: `code`,//admin fun misc code
   description: '<a:WeeWoo:525000522932027393>Causes an error to occur!',
   hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord){
       throw new Error(["This is testing error! Theres no real error!"])
 },

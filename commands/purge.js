@@ -6,6 +6,7 @@ guildOnly: false,
     usage: `<amount>`,
   catagory: `admin`,//admin fun misc code
   hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord){
 if(args[0]) {
         var amount = Math.round(args[0])

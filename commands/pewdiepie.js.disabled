@@ -6,6 +6,7 @@ guildOnly: false,
     usage: ``,
   catagory: `fun`,//admin fun misc code
   hidden: true,
+  aliases: [''],
     execute: async function (message, args, client, Discord) {
 
 ///////////////////////////////////////////////////

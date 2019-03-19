@@ -6,6 +6,7 @@ guildOnly: false,
     usage: `[rock|paper|scissors]`,
     catagory: `fun`,//admin fun misc code
     hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord){
 // r 1 p 2 s 3
       if(args[0] !== 'rock' && args[0] !== 'paper' && args[0] !== 'scissors' && args[0] !== 'r' && args[0] !== 'p' && args[0] !== 's') message.channel.send('Please choose `rock`, `paper` or `scissors`')

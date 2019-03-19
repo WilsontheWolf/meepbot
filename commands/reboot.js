@@ -6,6 +6,7 @@ guildOnly: false,
       usage: ``,
   catagory: `code`,//admin fun misc code
   hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord){
 const embed = new Discord.RichEmbed().setTitle('Done.').setDescription(`Restarted in **${Math.floor(client.ping)}**ms
 <a:loading:524998745725861904>`).setColor([255, 0, 255]);

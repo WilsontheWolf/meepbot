@@ -6,6 +6,7 @@ guildOnly: true,
     usage: ``,
   catagory: `misc`,//admin fun misc code
   hidden: false,
+  aliases: [''],
  execute(message, args, client, Discord, config) {
 let output = '';
 message.guild.emojis.forEach(emoji => {

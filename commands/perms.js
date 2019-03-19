@@ -6,6 +6,7 @@ guildOnly: true,
     usage: `<userID>`,
   catagory: `misc`,//admin fun misc code
   hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord){
       let userid
       if(args[0]) {if(message.guild.members.get(args[0]) === undefined) {userid = null 

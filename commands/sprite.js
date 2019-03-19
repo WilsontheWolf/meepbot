@@ -6,6 +6,7 @@ guildOnly: false,
       usage: ``,
   catagory: `fun`,//admin fun misc code
   hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord){
 const sprite = client.emojis.get('519997585516396544');
      message.delete().catch(O_o=>{}); 

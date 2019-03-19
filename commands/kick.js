@@ -6,6 +6,7 @@ guildOnly: true,
     usage: `[@user] <reason>`,
   catagory: `admin`,//admin fun misc code
   hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord, config){
       
 var kickable

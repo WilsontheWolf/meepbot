@@ -1,0 +1,29 @@
+module.exports = {
+ name: 'google',
+  allow: 'all',
+guildOnly: false,
+    description: 'Searches the specified text.',
+    usage: `[keyword]`,
+    catagory: `misc`,//admin fun misc code
+    hidden: false,
+    aliases: ['search', 'duckduckgo', 'bing'],
+    execute(message, args, client, Discord){
+      if(args[0]){
+const { Requester } = require("node-duckduckgo");
+const requester = new Requester("node-duckduckgo-example");
+requester.request(args.join(' '), (err, response, body) => {
+  if (err) {
+    const embed = new Discord.RichEmbed().setTitle('Error While Searching')
+    .setDescription(`There was an error while searching! Error: \`\`\`
+${err}
+\`\`\``)
+    message.channel.send(embed)
+    return;
+  }
+  const embed = new Discord.RichEmbed().setTitle('**Succ**sess')
+    .setDescription(`${body}`.substring(0,2040))
+  console.log(body)
+  message.channel.send(embed)
+});}
+},
+};

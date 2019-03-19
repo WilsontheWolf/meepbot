@@ -6,6 +6,7 @@ module.exports = {
       usage: `[code]`,
   catagory: `code`,//admin fun misc code
   hidden: false,
+  aliases: [''],
  execute: async (message, args, client, Discord, config, log, Music, fs, ytdl, moment, dmlog, command, unirest, hex64) => {
    function clean(text) {
   if (typeof(text) === "string")

@@ -6,6 +6,7 @@ guildOnly: false,
     usage: `<chatbot | command | other > [Mesage]`,
     catagory: `misc`,//admin fun misc code
     hidden: false,
+  aliases: [''],
     execute(message, args, client, Discord){
       let blog = "532255180935135233"
       const blacklist = ['']

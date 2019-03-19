@@ -6,6 +6,7 @@ guildOnly: false,
     usage: ``,
     catagory: `code`,//admin fun misc code
     hidden: false,
+    aliases: [''],
     execute(message, args, client, Discord, commandFiles, fs){
 client.commands = new Discord.Collection();
 

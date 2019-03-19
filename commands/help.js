@@ -6,6 +6,7 @@ module.exports = {
  usage: `<command name>`,
   catagory: `misc`,//admin fun misc code
   hidden: false,
+  aliases: ['h', 'halp', 'give_me_some_fricking_help_you_noob'],
  execute(message, args, client, Discord, config) {
   if(args[0]) {if (args.join(" ").startsWith(config.prefix)) {
     var commandName = args.shift().toLowerCase().slice(config.prefix.length);}
@@ -13,22 +14,25 @@ module.exports = {
   //splits up the message prefix(removed), command, extra stuff(1,2,3)
     var commandName = args.shift().toLowerCase();}
   //checks if command is valid
-  if (!client.commands.has(commandName)) {message.channel.send(`There was no command with the name ${commandName} use \`${config.prefix}help\` for a list of commands`) }
-              else{let cmd = client.commands.get(commandName)
-              console.log(cmd)
+  if (!client.commands.has(commandName) && !client.aliases.has(commandName)) {message.channel.send(`There was no command with the name ${commandName} nor an alias. Use \`${config.prefix}help\` for a list of commands`) }
+              else{let cmd = client.commands.get(commandName) || client.aliases.get(commandName)
                    let allow = cmd.allow
+                   let ali
                    if (cmd.allow === 'botowner') {allow = 'Bot Owner Only'}
                    if (cmd.allow === 'serverowner') {allow = 'Server Owner Only'}
                    if (cmd.allow === 'admin') {allow = 'Server Admin Only'}
                    if (cmd.allow === 'all') {allow = 'Everyone'}
                    if (cmd.allow === 'hidden') {allow = 'Everyone'}
+                   if (cmd.aliases[0]) {ali = `\`${cmd.aliases.join(', ')}\``}
+                   else { ali = 'none'}
                    let type = cmd.catagory
                    const embed = new Discord.RichEmbed().setTitle(cmd.name).setDescription(cmd.description)
                    .addField(`Usage:
 *<> is optional and [] is required and <choice1| choice2> or [coice1 | choice2] means pick between the choices*`, `${config.prefix}${cmd.name} ${cmd.usage}`)
                    .addField(`Server only:`, cmd.guildOnly)
                    .addField(`Allow:`, allow)
-                   .addField(`Catagory`, type)
+                   .addField(`Catagory:`, type)
+                   .addField(`Aliases:`, ali)
                    .setColor('F000FF')
                    .setFooter(`Note this feature is incomplete`)
                    message.channel.send(embed)
