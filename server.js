@@ -19,6 +19,7 @@ const users = new SQLite('./database/users.sqlite');
 const App  = Express()
 const welcomeHook = new Discord.WebhookClient(process.env.WELCOMEID, process.env.WELCOMETO);
 const logHook = new Discord.WebhookClient(process.env.LOGID, process.env.LOGTO);
+const Enmap = require('enmap')
 let mlog = config.masterlog
 let blog = config.botlog
 let BTLog = '521748473247170625'
@@ -411,21 +412,7 @@ const bembed = new Discord.RichEmbed().addField('<a:WeeWoo:525000522932027393>**
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 client.user.setActivity(`With ${client.users.size} Friends`)
-  
-    // Check if the table "points" exists.
-  const table = users.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'users';").get();
-  if (!table['count(*)']) {
-    // If the table isn't there, create it and setup the database correctly.
-    users.prepare("CREATE TABLE users (id TEXT PRIMARY KEY, description TEXT);").run();
-    // Ensure that the "id" row is always unique and indexed.
-    users.prepare("CREATE UNIQUE INDEX idx_users_id ON id (id);").run();
-    users.pragma("synchronous = 1");
-    users.pragma("journal_mode = wal");
-  }
- 
-  // And then we have two prepared statements to get and set the score data.
-  client.getProfile = users.prepare("SELECT * FROM users WHERE id = ?");
-  client.setProfile = users.prepare("INSERT OR REPLACE INTO users (id, description) VALUES (@id, @description);");
+
 });
 
 
