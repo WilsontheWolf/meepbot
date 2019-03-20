@@ -1,9 +1,10 @@
 dependencies:
   apiai: 4.0.3
   better-sqlite3: 5.4.0
-  canvas: 2.3.1
+  canvas: 2.4.1
   discord.js: 11.4.2
   discord.js-musicbot-addon: 13.4.0
+  enmap: 4.8.1
   express: 4.16.4
   ffmpeg: 0.0.4
   hex64: 0.4.0
@@ -12,12 +13,12 @@ dependencies:
   libsodium-wrappers: 0.7.4
   moment: 2.24.0
   moment-duration-format: 2.2.2
-  node-duckduckgo: 1.0.7
+  node-duckduckgo: 1.3.0
   node-gyp: 3.8.0
   node-opus: 0.3.1
   request: 2.88.0
   sodium: 3.0.2
-  systeminformation: 4.0.15
+  systeminformation: 4.1.1
   unirest: 0.6.0
 packages:
   /abbrev/1.1.1:
@@ -54,6 +55,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=
+  /any-promise/1.3.0:
+    dev: false
+    resolution:
+      integrity: sha1-q8av7tzqUugJzcA3au0845Y10X8=
   /apiai/4.0.3:
     dev: false
     resolution:
@@ -172,16 +177,16 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=
-  /canvas/2.3.1:
+  /canvas/2.4.1:
     dependencies:
-      nan: 2.12.1
+      nan: 2.13.1
       node-pre-gyp: 0.11.0
     dev: false
     engines:
       node: '>=6'
     requiresBuild: true
     resolution:
-      integrity: sha512-jSxwf4V9AGD6t6yBC600xFZKjrfKTR0T0RUNlX/AODs/ifrfJHIQjFEK8iF2euNy6z7K3GNv82DJgTjYZZktqA==
+      integrity: sha512-SaFomFqDuuuSTScTHQ7nXc5ea71Ieb8ctvwXjR7vzLsBMfp3euTv2xsTY70zIoC5r4sSQZYXv6tiHiORJ4y1vg==
   /caseless/0.12.0:
     dev: false
     resolution:
@@ -365,6 +370,14 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
+  /enmap/4.8.1:
+    dependencies:
+      lodash: 4.17.11
+    dev: false
+    peerDependencies:
+      better-sqlite-pool: 'github:eslachance/better-sqlite-pool'
+    resolution:
+      integrity: sha512-VYe64/sws4BKSmHaRw/XsBVbIjBQfgqvrtm3wna97c6IbrUqD/mLpT6/6PPX4276XhyuZhdBirvGe2mFS/PfXg==
   /escape-html/1.0.3:
     dev: false
     resolution:
@@ -734,6 +747,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-fTU3vUdrxQzhPAAjmTSqKk4LzYbR0OtcYjp1P92AlH50JIxXZFEIXWh1yryCmU6RLGfwS2IzBdZjbmpYf/TlyQ==
+  /lodash/4.17.11:
+    dev: false
+    resolution:
+      integrity: sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
   /long/4.0.0:
     dev: false
     resolution:
@@ -865,6 +882,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-JY7V6lRkStKcKTvHO5NVSQRv+RV+FIL5pvDoLiAtSL9pKlC5x9PKQcZDsq7m4FO4d57mkhC6Z+QhAh3Jdk5JFw==
+  /nan/2.13.1:
+    dev: false
+    resolution:
+      integrity: sha512-I6YB/YEuDeUZMmhscXKxGgZlFnhsn5y0hgOZBadkzfTRrZBtJDZeg6eQf7PYMIEclwmorTKK8GztsyOUSVBREA==
   /needle/2.2.4:
     dependencies:
       debug: 2.6.9
@@ -886,13 +907,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-479Bjw9nTE5DdBSZZWprFryHGjUaQC31y1wHo19We/k0BZlrmhqQitWoUL0cD8+scljCbIUL+E58oRDEakdGGA==
-  /node-duckduckgo/1.0.7:
+  /node-duckduckgo/1.3.0:
     dependencies:
+      any-promise: 1.3.0
       query-string-builder: 0.0.1
       request: 2.88.0
     dev: false
     resolution:
-      integrity: sha512-B4/mNQrw6Sz/sUq/lFnk5wBtYKtxnnkbdqf7X6bQjdrOtp/KvJ96xRArCNoD2QwMZ0E+BUZp+zcFAssklO0e+Q==
+      integrity: sha512-6D27ogvAx1FLKf0jACrzu/vBmCyl5lvoSGqIlXLOn0u5VnE4wOwKqUSFkRz/ho5sP2tteYMisRKWKcAVw6HZkA==
   /node-gyp/3.8.0:
     dependencies:
       fstream: 1.0.11
@@ -1352,12 +1374,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-PFMZQukIwml8DsNEhYwobHygpgo=
-  /systeminformation/4.0.15:
+  /systeminformation/4.1.1:
     dev: false
     engines:
       node: '>=4.0.0'
     resolution:
-      integrity: sha512-fnG0dDORrBHhF9IQzX4pMJzNuQnZvmepGqqv6a2J7VYGv/Z/8+E5Mrzbx4HLvVJZHhTcSe8szTWgLa1ALeh8lg==
+      integrity: sha512-sRQYRRTOkwpXQA8grIBPSZEzJvxdsitdmrp0mer9MFRlry5AJC6DbAE0EcsK54k5jLTBaauvzCFwM+y7c5fMmg==
   /tar/2.2.1:
     dependencies:
       block-stream: 0.0.9
@@ -1528,9 +1550,10 @@ shrinkwrapVersion: 3
 specifiers:
   apiai: ^4.0.3
   better-sqlite3: ^5.4.0
-  canvas: ^2.3.1
+  canvas: ^2.4.1
   discord.js: ^11.4.2
   discord.js-musicbot-addon: 13.4.0
+  enmap: ^4.8.1
   express: ^4.16.4
   ffmpeg: ^0.0.4
   hex64: ^0.4.0
@@ -1539,10 +1562,10 @@ specifiers:
   libsodium-wrappers: ^0.7.3
   moment: ^2.24.0
   moment-duration-format: ^2.2.2
-  node-duckduckgo: ^1.0.7
+  node-duckduckgo: ^1.3.0
   node-gyp: ^3.8.0
   node-opus: ^0.3.1
   request: ^2.88.0
   sodium: ^3.0.2
-  systeminformation: ^4.0.15
+  systeminformation: ^4.1.1
   unirest: ^0.6.0
