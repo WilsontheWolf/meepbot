@@ -1,6 +1,8 @@
 MeepBot Code
 ==========================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/WilsontheWolf/meepbot.svg)](https://greenkeeper.io/)
+
 Invite bot: [here](https://discordapp.com/api/oauth2/authorize?client_id=519354760139243531&permissions=3145728&scope=bot)
 
 MeepMusic was made using discord.js-musicbot-addon.
