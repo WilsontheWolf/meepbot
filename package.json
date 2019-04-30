@@ -35,7 +35,7 @@
     "better-sqlite3": "^5.4.0",
     "node-duckduckgo": "^2.0.2",
     "js-beautify": "^1.8.9",
-    "enmap": "^4.8.1"
+    "enmap": "^4.8.5"
   },
   "engines": {
     "node": "9.x"
