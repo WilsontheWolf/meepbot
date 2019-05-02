@@ -34,7 +34,7 @@
     "hex64": "^0.4.0",
     "better-sqlite3": "^5.4.0",
     "node-duckduckgo": "^2.0.2",
-    "js-beautify": "^1.8.9",
+    "js-beautify": "^1.10.0",
     "enmap": "^4.8.1"
   },
   "engines": {
