@@ -18,7 +18,7 @@
     "canvas": "^2.4.1",
     "discord.js": "^11.4.2",
     "discord.js-musicbot-addon": "13.5.1",
-    "express": "^4.16.4",
+    "express": "^4.17.0",
     "ffmpeg": "^0.0.4",
     "libsodium-wrappers": "^0.7.3",
     "moment": "^2.24.0",
