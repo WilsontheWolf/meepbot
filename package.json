@@ -32,7 +32,7 @@
     "unirest": "^0.6.0",
     "hex64": "^0.4.0",
     "better-sqlite3": "^5.4.0",
-    "node-duckduckgo": "^2.0.2",
+    "node-duckduckgo": "^2.0.3",
     "js-beautify": "^1.8.9",
     "enmap": "^4.8.1"
   },
