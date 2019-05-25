@@ -1,9 +1,13 @@
 MeepBot Code
 ==========================
 
-[![Current Version](https://img.shields.io/github/package-json/v/wilsonthewolf/meepbot.svg)](https://meep-bot.glitch.me/)
-
-Invite bot: [here](https://discordapp.com/api/oauth2/authorize?client_id=519354760139243531&permissions=3145728&scope=bot)
+![Current Version](https://img.shields.io/github/package-json/v/wilsonthewolf/meepbot.svg)
+[![Discord.js Version](https://img.shields.io/github/package-json/dependency-version/wilsonthewolf/meepbot/discord.js.svg?logo=discord&logoColor=white)](https://discord.js.org/)
+![Repo Size](https://img.shields.io/github/repo-size/wilsonthewolf/meepbot.svg)
+![Dependencies](https://img.shields.io/david/wilsonthewolf/meepbot.svg)
+[![Github Issues](https://img.shields.io/github/issues/wilsonthewolf/meepbot.svg?logo=github)](https://github.com/wilsonthewolf/meepbot/issues)
+[![Github Stars](https://img.shields.io/github/stars/wilsonthewolf/meepbot.svg?style=social)](https://github.com/wilsonthewolf/meepbot/issues)
+[![Invite Bot.](https://img.shields.io/endpoint.svg?logo=discord&logoColor=white&url=https%3A%2F%2Fmeep-bot.glitch.me%2Finvites)](https://discordapp.com/api/oauth2/authorize?client_id=519354760139243531&permissions=3145728&scope=bot)
 
 MeepMusic was made using discord.js-musicbot-addon.
 
