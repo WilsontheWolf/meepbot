@@ -1,7 +1,7 @@
 MeepBot Code
 ==========================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/WilsontheWolf/meepbot.svg)](https://greenkeeper.io/)
+[![Current Version](https://img.shields.io/github/package-json/v/wilsonthewolf/meepbot.svg)](https://meep-bot.glitch.me/)
 
 Invite bot: [here](https://discordapp.com/api/oauth2/authorize?client_id=519354760139243531&permissions=3145728&scope=bot)
 
